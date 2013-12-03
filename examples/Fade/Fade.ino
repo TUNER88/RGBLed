@@ -4,7 +4,6 @@ RGBLed led(9,10,11);
 
 void setup()
 {
-  Serial.begin(9600);
 }
 
 void loop()
