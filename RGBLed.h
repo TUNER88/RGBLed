@@ -11,7 +11,7 @@ class RGBLed
         uint8_t gPin;
         uint8_t bPin;
     
-        uint8_t rVal;
-        uint8_t gVal;
-        uint8_t bVal;
+        float rVal;
+        float gVal;
+        float bVal;
 };

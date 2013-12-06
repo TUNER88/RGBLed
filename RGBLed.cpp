@@ -18,20 +18,24 @@ void RGBLed::fadeTo(uint8_t red, uint8_t green, uint8_t blue, unsigned int time)
     uint8_t stepSize = 1;
     
     float rStep = (red - this->rVal) / (float)(255/stepSize);
-    float gStep = (green - this->gVal) / (float)(255/stepSize);
+    float gStep = (float)(green - this->gVal) / (float)(255/stepSize);
     float bStep = (blue - this->bVal) / (float)(255/stepSize);
+    
+    
     
     for (byte i = 0 ; i < 255; i+=stepSize){
         this->rVal += rStep;
         this->gVal += gStep;
         this->bVal += bStep;
         
-        analogWrite(rPin, this->rVal);
-        analogWrite(gPin, this->gVal);
-        analogWrite(bPin, this->bVal);
+        analogWrite(rPin, (int)this->rVal);
+        analogWrite(gPin, (int)this->gVal);
+        analogWrite(bPin, (int)this->bVal);
         
 		delay(time / (255 / stepSize));
 	}
+    
+    
     
     this->rVal = red;
     this->gVal = green;
