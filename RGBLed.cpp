@@ -45,3 +45,7 @@ void RGBLed::fadeTo(uint8_t red, uint8_t green, uint8_t blue, unsigned int time)
     analogWrite(gPin,green);
     analogWrite(bPin,blue);
 }
+
+bool RGBLed::isOn(){
+    return !(this->rVal == 0 && this->gVal == 0 && this->bVal == 0);
+}
